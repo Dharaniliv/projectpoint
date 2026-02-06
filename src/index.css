@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ProjectPoint Design System - Forest Green + Cream */
+
+@layer base {
+  :root {
+    /* Core palette - Deep forest greens with warm cream */
+    --background: 40 30% 97%;
+    --foreground: 150 30% 10%;
+
+    --card: 40 40% 99%;
+    --card-foreground: 150 30% 10%;
+
+    --popover: 40 40% 99%;
+    --popover-foreground: 150 30% 10%;
+
+    /* Primary - Deep forest green */
+    --primary: 150 40% 22%;
+    --primary-foreground: 40 30% 97%;
+
+    /* Secondary - Soft sage */
+    --secondary: 140 20% 94%;
+    --secondary-foreground: 150 40% 22%;
+
+    /* Muted - Warm cream grey */
+    --muted: 40 20% 94%;
+    --muted-foreground: 150 10% 45%;
+
+    /* Accent - Warm terracotta for CTAs */
+    --accent: 24 70% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 30% 97%;
+
+    --border: 140 15% 88%;
+    --input: 140 15% 88%;
+    --ring: 150 40% 22%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(150 40% 22%) 0%, hsl(150 35% 32%) 100%);
+    --card-shadow: 0 2px 12px -2px hsl(150 30% 20% / 0.06);
+    --card-shadow-hover: 0 8px 24px -6px hsl(150 30% 20% / 0.12);
+    --surface-elevated: 40 40% 99%;
+
+    /* Sidebar tokens */
+    --sidebar-background: 40 30% 97%;
+    --sidebar-foreground: 150 30% 10%;
+    --sidebar-primary: 150 40% 22%;
+    --sidebar-primary-foreground: 40 30% 97%;
+    --sidebar-accent: 140 20% 94%;
+    --sidebar-accent-foreground: 150 40% 22%;
+    --sidebar-border: 140 15% 88%;
+    --sidebar-ring: 150 40% 22%;
+  }
+
+  .dark {
+    --background: 150 30% 6%;
+    --foreground: 40 30% 95%;
+
+    --card: 150 25% 10%;
+    --card-foreground: 40 30% 95%;
+
+    --popover: 150 25% 10%;
+    --popover-foreground: 40 30% 95%;
+
+    --primary: 40 30% 95%;
+    --primary-foreground: 150 30% 10%;
+
+    --secondary: 150 20% 15%;
+    --secondary-foreground: 40 30% 95%;
+
+    --muted: 150 20% 15%;
+    --muted-foreground: 140 15% 60%;
+
+    --accent: 24 70% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 40 30% 95%;
+
+    --border: 150 20% 18%;
+    --input: 150 20% 18%;
+    --ring: 140 20% 70%;
+
+    --sidebar-background: 150 30% 6%;
+    --sidebar-foreground: 40 30% 95%;
+    --sidebar-primary: 40 30% 95%;
+    --sidebar-primary-foreground: 150 30% 10%;
+    --sidebar-accent: 150 20% 15%;
+    --sidebar-accent-foreground: 40 30% 95%;
+    --sidebar-border: 150 20% 18%;
+    --sidebar-ring: 140 20% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--hero-gradient);
+  }
+
+  .card-elevated {
+    box-shadow: var(--card-shadow);
+    @apply bg-card transition-shadow duration-300;
+  }
+
+  .card-elevated:hover {
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .hero-gradient {
+    background: var(--hero-gradient);
+  }
+
+  .glass-effect {
+    @apply bg-background/80 backdrop-blur-lg;
+  }
+}
