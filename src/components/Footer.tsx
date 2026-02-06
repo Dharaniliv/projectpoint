@@ -14,7 +14,7 @@ const Footer = () => {
           </Link>
           
           <p className="text-sm text-muted-foreground">
-            © 2024 ProjectPoint. All rights reserved.
+            © 2026 ProjectPoint. All rights reserved.
           </p>
         </div>
       </div>
